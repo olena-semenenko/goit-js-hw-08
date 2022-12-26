@@ -4,7 +4,7 @@ const form = document.querySelector('.feedback-form');
 const email = document.querySelector('.feedback-form input');
 const message = document.querySelector('.feedback-form textarea');
 
-form.addEventListener('input', onForm);
+form.addEventListener('input', throttle(onForm, 500));
 form.addEventListener('submit', onFormSubmit);
 
 const userData = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
